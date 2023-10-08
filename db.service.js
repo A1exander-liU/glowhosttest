@@ -3,6 +3,7 @@ const pool = mariadb.createPool({
   host: "154.12.166.82",
   user: "glowhosttestdbuser",
   password: "FoDbE;(Mn3+m",
+  database: "ricelove_glowhosttest",
   connectionLimit: 5
 });
 
