@@ -7,14 +7,14 @@ const pool = mariadb.createPool({
   connectionLimit: 5
 });
 
-async function connect() {
+async function query(queryString) {
   let connection;
   try {
     connection = await pool.getConnection();
-    const users = await connection.query("SELECT * FROM users");
-    console.log(`USERS: ${users}`);
+    const result = await connection.query(queryString);
+    return result;
   } catch (err) {
-    console.log(err);
+    throw(err);
   } finally {
     if (connection) {
       connection.end();
@@ -23,5 +23,5 @@ async function connect() {
 }
 
 module.exports = {
-  connect: connect
+  query: query
 }
