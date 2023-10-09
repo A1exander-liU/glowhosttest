@@ -3,7 +3,7 @@ const pool = mariadb.createPool({
   host: "quebec.gendns.com",
   user: "ricelove_glowhosttestdbuser",
   password: "FoDbE;(Mn3+m",
-  // database: "ricelove_glowhosttest",
+  database: "ricelove_glowhosttest",
   connectionLimit: 5
 });
 
